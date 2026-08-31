@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package protocol;
+
+message GetConfigViewRequest {
+  string key = 1;
+}
+
+message GetConfigViewResponse {
+  string value = 1;
+  bool exists = 2;
+}
+
+service ProtocolService {
+  // Existing methods...
+  rpc GetConfigView(GetConfigViewRequest) returns (GetConfigViewResponse);
+}
